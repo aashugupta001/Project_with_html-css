@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vision Board 2026 – Daily Habits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #80c7e5, #1e4d5d, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .page-container {
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 60px 45px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            opacity: 0.85;
+            margin-bottom: 35px;
+        }
+
+        .divider {
+            width: 120px;
+            height: 4px;
+            background: #ffffff;
+            margin: 0 auto 50px auto;
+            border-radius: 2px;
+        }
+
+        .habits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .habit-card {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 30px;
+            border-radius: 16px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .habit-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .habit-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .habit-card ul {
+            list-style: none;
+        }
+
+        .habit-card ul li {
+            font-size: 15px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .routine {
+            margin-top: 55px;
+            padding: 35px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .routine h3 {
+            font-size: 22px;
+            margin-bottom: 22px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .routine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .routine-box {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        footer {
+            margin-top: 45px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .habit-card {
+                padding: 25px;
+            }
+        }
+         footer a{
+            color:white;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <div class="page-title">Daily Habits</div>
+        <div class="subtitle">Small actions repeated daily create big results</div>
+        <div class="divider"></div>
+
+        <div class="habits-grid">
+            <div class="habit-card">
+                <h3>Learning Habits</h3>
+                <ul>
+                    <li>Practice coding daily</li>
+                    <li>Revise concepts regularly</li>
+                    <li>Build and improve projects</li>
+                </ul>
+            </div>
+
+            <div class="habit-card">
+                <h3>Health Habits</h3>
+                <ul>
+                    <li>Wake up early</li>
+                    <li>Exercise or walk daily</li>
+                    <li>Maintain proper sleep</li>
+                </ul>
+            </div>
+
+            <div class="habit-card">
+                <h3>Focus Habits</h3>
+                <ul>
+                    <li>Limit social media usage</li>
+                    <li>Follow a fixed daily schedule</li>
+                    <li>Complete priority tasks first</li>
+                </ul>
+            </div>
+
+            <div class="habit-card">
+                <h3>Mindset Habits</h3>
+                <ul>
+                    <li>Stay positive during challenges</li>
+                    <li>Reflect on progress daily</li>
+                    <li>Remain consistent and patient</li>
+                </ul>
+            </div>
+
+            <div class="habit-card">
+                <h3>Financial Habits</h3>
+                <ul>
+                    <li>Track daily expenses</li>
+                    <li>Save a fixed amount regularly</li>
+                    <li>Avoid unnecessary spending</li>
+                </ul>
+            </div>
+
+            <div class="habit-card">
+                <h3>Personal Discipline</h3>
+                <ul>
+                    <li>Follow time blocks strictly</li>
+                    <li>Finish tasks before deadlines</li>
+                    <li>Maintain consistency even when tired</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="routine">
+            <h3>Ideal Daily Routine</h3>
+            <div class="routine-grid">
+                <div class="routine-box">Morning Planning</div>
+                <div class="routine-box">Focused Study Time</div>
+                <div class="routine-box">Skill Practice</div>
+                <div class="routine-box">Physical Activity</div>
+                <div class="routine-box">Revision and Reflection</div>
+                <div class="routine-box">Proper Rest</div>
+            </div>
+        </div>
+
+        <footer>
+            Vision Board 2026 |<a href="page1.html">    Home   |</a> Page 3 |<a href="page4.html"> Next</a>
+        </footer>
+    </div>
+
+</body>
+</html>
