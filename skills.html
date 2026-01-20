@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills & Technologies - Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 5px;
+            height: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 1s ease;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .certifications {
+            margin-bottom: 3rem;
+        }
+
+        .certifications h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cert-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .cert-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 0 2rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem; color: #667eea;">My Skills & Technologies</h1>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">As a fresher, I'm continuously learning
+            and applying these tools to build great projects.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+                <p>Built semantic, accessible websites.</p>
+            </div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+                <p>Styled responsive designs with Flexbox and Grid.</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+                <p>Added interactivity and logic to apps.</p>
+            </div>
+            <div class="skill-card">
+                <h3>React</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <p>Created dynamic UIs with components.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Node.js</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+                <p>Built basic backend APIs.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Git</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+                <p>Version control and collaboration.</p>
+            </div>
+        </div>
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-list">
+                <div class="cert-card">
+                    <h4>freeCodeCamp Responsive Web Design</h4>
+                    <p>Completed in 2023 - Learned HTML, CSS, and responsive techniques.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Udemy JavaScript Course</h4>
+                    <p>Completed in 2024 - Mastered JS fundamentals and DOM manipulation.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Google IT Support (In Progress)</h4>
+                    <p>Expected completion 2024 - Gaining IT and troubleshooting skills.</p>
+                </div>
+            </div>
+        </section>
+        <div class="cta-section">
+            <h2>Ready to Hire Me?</h2>
+            <p>Let's discuss how my skills can benefit your team.</p>
+            <a href="contact.html" class="cta-button">Contact Me</a>
+        </div>
+    </div>
+</body>
+
+</html>

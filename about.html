@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Your Name Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-about {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-about .photo {
+            width: 179px;
+            height: 192px;
+            border-radius: 0%;
+            margin: 30px auto 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-about .photo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .bio {
+            margin-bottom: 3rem;
+        }
+
+        .bio p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            margin-bottom: 3rem;
+        }
+
+        .timeline h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right: 10px solid #fff;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-about {
+                padding: 2rem;
+            }
+
+            .timeline-item {
+                margin-left: 2rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="hero-about">
+            <div class="photo">
+                <img src="https://via.placeholder.com/150x150/cccccc/000000?text=Your+Photo" alt="Your Photo">
+            </div>
+            <h2>Gupta Aashu</h2>
+            <p>Aspiring Web Developer | Fresher with a passion for innovation.</p>
+        </section>
+        <section class="bio">
+            <h2>My Story</h2>
+            <p>Hi! I'm a dedicated fresher web developer who fell in love with coding during my self-study journey.
+                Starting with basic HTML and CSS, I've grown to build interactive apps and websites. I believe in
+                continuous learning and am excited to bring fresh ideas to a dynamic team. Outside of work, I enjoy tech
+                blogs, open-source contributions, and exploring new frameworks. Let's collaborate and create something
+                impactful!</p>
+        </section>
+        <section class="timeline">
+            <h2>My Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <h3>2022: The Beginning</h3>
+                    <p>Started learning web development through free online resources like freeCodeCamp.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023: First Projects</h3>
+                    <p>Built my first responsive website and a simple blog, gaining hands-on experience.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024: Ready for More</h3>
+                    <p>Exploring advanced topics like APIs and frameworks, eager to join a professional team.</p>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section">
+            <h2>Let's Connect!</h2>
+            <p>Interested in my story? Reach out for opportunities or collaborations.</p>
+            <a href="portfolio.html" class="cta-button">Portfolio</a>
+            <a href="contact.html" class="cta-button">Contact Me</a>
+        </section>
+    </div>
+    <script>
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+        timelineItems.forEach(item => observer.observe(item));
+    </script>
+</body>
+
+</html>

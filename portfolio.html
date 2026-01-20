@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        .project-card p {
+            padding: 0 1rem;
+            color: #666;
+        }
+
+        .project-card .tech {
+            padding: 0 1rem 1rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            margin-bottom: 1rem;
+        }
+
+        .modal a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 0 2rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem; color: #667eea;">My Portfolio</h1>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Here are some of my recent projects as a
+            fresher. Click to learn more!</p>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openModal('modal1')">
+                <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Project+1" alt="Project 1">
+                <h3>Responsive E-Commerce Site</h3>
+                <p>A simple online store with cart functionality.</p>
+                <div class="tech">Tech: HTML, CSS, JavaScript</div>
+            </div>
+            <div class="project-card" onclick="openModal('modal2')">
+                <img src="https://via.placeholder.com/400x200/764ba2/ffffff?text=Project+2" alt="Project 2">
+                <h3>Personal Blog</h3>
+                <p>A dynamic blog with user comments.</p>
+                <div class="tech">Tech: React, Node.js</div>
+            </div>
+            <div class="project-card" onclick="openModal('modal3')">
+                <img src="https://via.placeholder.com/400x200/ff6b6b/ffffff?text=Project+3" alt="Project 3">
+                <h3>Weather App</h3>
+                <p>Real-time weather data with API integration.</p>
+                <div class="tech">Tech: Vue.js, API</div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <h2>Impressed? Check My Skills!</h2>
+            <p>See what technologies I work with.</p>
+            <a href="skills.html" class="cta-button">View Skills</a>
+        </div>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Responsive E-Commerce Site</h2>
+            <p>Detailed description: Built a fully responsive site with product listings, add-to-cart, and checkout.
+                Learned about state management and user experience.</p>
+            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Personal Blog</h2>
+            <p>Detailed description: Created a blog with dynamic content loading and comment system. Focused on backend
+                integration and responsive design.</p>
+            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Weather App</h2>
+            <p>Detailed description: Integrated a weather API for real-time data. Emphasized clean UI and error
+                handling.</p>
+            <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+    <script>
+        function openModal(modalId) { document.getElementById(modalId).style.display = 'block'; }
+        function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
+        window.onclick = function (event) { if (event.target.classList.contains('modal')) { event.target.style.display = 'none'; } };
+    </script>
+</body>
+
+</html>
