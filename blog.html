@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashu Gupta Challengers - Blog & Tips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .search {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .search input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .search input:focus {
+            border-color: #667eea;
+        }
+        .search::before {
+            content: "\f002"; /* Search icon */
+            font-family: "Font Awesome 6 Free";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        .post {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .post h2:hover {
+            color: #667eea;
+        }
+        .post-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .post-excerpt {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .post-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .post-content.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+        @keyframes slideDown {
+            from { max-height: 0; opacity: 0; }
+            to { max-height: 500px; opacity: 1; }
+        }
+        .read-more {
+            color: #667eea;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        .tips-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .tips-section h2 {
+            margin-top: 0;
+        }
+        .tip {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-blog"></i> Aashu Gupta Challengers</h1>
+        <p>Your Ultimate Source for Challenges, Tips & Inspiration</p>
+        <nav>
+            <a href="#" onclick="showHome()"><i class="fas fa-home"></i> Home</a>
+            <a href="#" onclick="showTips()"><i class="fas fa-lightbulb"></i> Tips</a>
+            <a href="#" onclick="showAbout()"><i class="fas fa-user"></i> About</a>
+            <a href="#" onclick="showContact()"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="search" placeholder="Search posts or tips...">
+        </div>
+        <div id="content">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Aashu Gupta Challengers. Follow us on <a href="https://youtube.com/@Aashuguptachallengers" target="_blank">YouTube</a> | <a href="#" target="_blank">Instagram</a></p>
+    </footer>
+
+    <script>
+        const posts = [
+            {
+                id: 1,
+                title: "Welcome to Aashu Gupta Challengers",
+                date: "October 1, 2023",
+                excerpt: "Kick off your journey with challenges and inspiration from Aashu Gupta Challengers!",
+                content: "Full content: Dive into exciting challenges, tips, and motivational content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Join our community for daily updates!"
+            },
+            {
+                id: 2,
+                title: "Top Web Development Tips",
+                date: "October 5, 2023",
+                excerpt: "Essential tips for aspiring web developers to level up their skills.",
+                content: "Full content: 1. Learn HTML/CSS first. 2. Master JavaScript. 3. Practice with projects. 4. Stay updated with frameworks. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            {
+                id: 3,
+                title: "The Power of Challenges",
+                date: "October 10, 2023",
+                excerpt: "How taking on challenges can transform your life and career.",
+                content: "Full content: Challenges build resilience. Embrace them! Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Subscribe to Aashu Gupta Challengers for more!"
+            }
+        ];
+
+        const tips = [
+            "Start your day with a positive affirmation to boost confidence.",
+            "Learn one new skill every week – consistency is key!",
+            "Stay hydrated and exercise daily for better productivity.",
+            "Network with like-minded people to grow your circle.",
+            "Set small, achievable goals to build momentum."
+        ];
+
+        function renderPosts(filter = '') {
+            const content = document.getElementById('content');
+            content.innerHTML = '';
+            posts.filter(post => post.title.toLowerCase().includes(filter.toLowerCase()) || post.excerpt.toLowerCase().includes(filter.toLowerCase())).forEach(post => {
+                const div = document.createElement('div');
+                div.className = 'post';
+                div.innerHTML = `
+                    <h2 onclick="togglePost(${post.id})">${post.title}</h2>
+                    <p class="post-meta"><i class="fas fa-calendar"></i> ${post.date}</p>
+                    <p class="post-excerpt">${post.excerpt}</p>
+                    <span class="read-more" onclick="togglePost(${post.id})">Read More <i class="fas fa-arrow-right"></i></span>
+                    <div class="post-content" id="post-${post.id}">${post.content}</div>
+                `;
+                content.appendChild(div);
+            });
+        }
+
+        function togglePost(id) {
+            const content = document.getElementById(`post-${id}`);
+            content.classList.toggle('show');
+        }
+
+        function showHome() {
+            renderPosts();
+        }
+
+        function showTips() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div class="tips-section">
+                    <h2><i class="fas fa-lightbulb"></i> Daily Tips from Aashu Gupta Challengers</h2>
+                    ${tips.map(tip => `<div class="tip"><i class="fas fa-check-circle"></i> ${tip}</div>`).join('')}
+                    <p>Subscribe to our YouTube channel for more tips and challenges!</p>
+                </div>
+            `;
+        }
+
+        function showAbout() {
+            const content = document.getElementById('content');
+            content.innerHTML = '<h2>About Aashu Gupta Challengers</h2><p>Aashu Gupta Challengers is a YouTube channel dedicated to motivating you through challenges, sharing life hacks, and providing tips for personal growth. Follow us for daily inspiration!</p>';
+        }
+
+        function showContact() {
+            const content = document.getElementById('content');
+            content.innerHTML = '<h2>Contact Us</h2><p>Email: aashuguptachallengers@gmail.com</p><p>YouTube: <a href="https://youtube.com/@Aashuguptachallengers" target="_blank">@Aashuguptachallengers</a></p><p>Follow us on social media for updates!</p>';
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            renderPosts(e.target.value);
+        });
+
+        // Initial load
+        renderPosts();
+    </script>
+</body>
+</html>
