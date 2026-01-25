@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Computer Science",
+    "description": "Learn programming, algorithms, and software development.",
+    "duration": "4 years",
+    "fees": "$10,000/year",
+    "eligibility": "High school diploma with math background"
+  },
+  {
+    "id": 2,
+    "name": "Business Administration",
+    "description": "Study management, finance, and entrepreneurship.",
+    "duration": "3 years",
+    "fees": "$8,000/year",
+    "eligibility": "High school diploma"
+  },
+  {
+    "id": 3,
+    "name": "Engineering",
+    "description": "Explore mechanical, electrical, and civil engineering.",
+    "duration": "4 years",
+    "fees": "$12,000/year",
+    "eligibility": "High school diploma with science background"
+  },
+    {
+        "id": 4,
+        "name": "Psychology",
+        "description": "Understand human behavior and mental processes.",
+        "duration": "3 years",
+        "fees": "$9,000/year",
+        "eligibility": "High school diploma"
+    },
+    {
+        "id": 5,
+        "name": "Fine Arts",
+        "description": "Develop skills in painting, sculpture, and other visual arts.",
+        "duration": "3 years",
+        "fees": "$7,000/year",
+        "eligibility": "High school diploma with portfolio"
+    },
+    {
+        "id": 6,
+        "name": "Medicine",
+        "description": "Comprehensive study of medical sciences and clinical practice.",
+        "duration": "5 years",
+        "fees": "$15,000/year",
+        "eligibility": "High school diploma with science background and entrance exam"
+    },
+    {
+        "id": 7,
+        "name": "Law",
+        "description": "Learn about legal systems, laws, and legal practices.",
+        "duration": "3 years",
+        "fees": "$11,000/year",
+        "eligibility": "High school diploma"
+    },
+    {
+        "id": 8,
+        "name": "Architecture",
+        "description": "Study design, construction, and urban planning.",
+        "duration": "5 years",
+        "fees": "$13,000/year",
+        "eligibility": "High school diploma with math and art background"
+    }
+]
