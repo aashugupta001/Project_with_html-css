@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewellery Brand</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif; /* Elegant serif font for premium feel */
+            background-color: #FFF; /* White background */
+            color: #000; /* Black text */
+            line-height: 1.6;
+        }
+
+        /* Header Section (Logo on left, Nav on right) */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #FFF; /* White background */
+            border-bottom: 2px solid #FFD700; /* Gold border for luxury accent */
+        }
+        .logo-frame {
+            border: 3px solid #FFD700; /* Gold frame */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Subtle gold glow */
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between image and text */
+        }
+        .logo-image {
+            width: 60px; /* Smaller size for header */
+            height: auto;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000; /* Black text */
+            letter-spacing: 2px;
+        }
+        .nav-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 20px; /* Space between nav items */
+        }
+        .nav-link {
+            color: #000; /* Black text */
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #FFD700; /* Gold on hover */
+        }
+
+        /* Hero Carousel */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            background-color: #FFF; /* White background */
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .carousel-image {
+            width: 35%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9); /* Slight dim for elegance */
+        }
+        .carousel-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            padding: 15px;
+            border-radius: 5px;
+            color: #000; /* Black text */
+            border: 1px solid #FFD700; /* Gold border */
+        }
+        .carousel-name {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .carousel-price {
+            font-size: 1.2rem;
+            margin: 5px 0 0 0;
+            color: #FFD700; /* Gold for price */
+        }
+
+        /* Featured Products Grid */
+        .featured-section {
+            padding: 50px 20px;
+            background-color: #FFF; /* White background */
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #000; /* Black text */
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background-color: #F9F9F9; /* Light gray for cards */
+            border: 2px solid #FFD700; /* Gold border */
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); /* Gold shadow */
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-name {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #000; /* Black text */
+        }
+        .product-price {
+            font-size: 1.1rem;
+            margin: 10px 0 0 0;
+            color: #FFD700; /* Gold for price */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+            .nav-list {
+                justify-content: center;
+                gap: 15px;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            .logo-image {
+                width: 50px;
+            }
+            .hero-carousel {
+                height: 300px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (Logo on left, Nav on right) -->
+    <header class="header">
+        <div class="logo-frame">
+            <img src="logo.jpeg" alt="Survana Logo" class="logo-image"> <!-- Placeholder logo image; replace with your actual logo URL -->
+            <div class="logo">Survana</div>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Shop</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel -->
+    <div class="hero-carousel" id="carousel">
+        <div class="carousel-slide active">
+            <img src="pic1.jpeg" alt="Diamond Necklace" class="carousel-image">
+            <div class="carousel-info">
+                <h2 class="carousel-name">Gold Necklace</h2>
+                <p class="carousel-price">$5,999</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="pic3.jpeg" alt="Gold Earrings" class="carousel-image" height="100">
+            <div class="carousel-info">
+                <h2 class="carousel-name">Gold Handmade Necklace</h2>
+                <p class="carousel-price">$1,299</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="pic2.jpeg" alt="Silver Bracelet" class="carousel-image">
+            <div class="carousel-info">
+                <h2 class="carousel-name">Gold Necklace</h2>
+                <p class="carousel-price">$799</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Featured Products Section -->
+    <section class="featured-section">
+        <h2 class="section-title">Featured Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="pic5.jpeg" alt="Ring" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Traditional Style </h3>
+                    <p class="product-price">$2,499</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="pic1.jpeg" alt="Necklace" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Pearl Necklace</h3>
+                    <p class="product-price">$1,899</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="pic3.jpeg" alt="Bracelet" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Gold Necklace</h3>
+                    <p class="product-price">$3,299</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="pic2.jpeg" alt="Earrings" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Gold Jewellery</h3>
+                    <p class="product-price">$1,499</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Auto-sliding Carousel Script
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 4 seconds
+        setInterval(nextSlide, 4000);
+
+        // Pause on hover
+        const carousel = document.getElementById('carousel');
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlide);
+        });
+        carousel.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextSlide, 4000);
+        });
+    </script>
+</body>
+</html>
