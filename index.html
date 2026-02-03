@@ -2,96 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Suvarna Silver Jewellers</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book premium travel tours with our agency. Affordable, trusted, and easy booking for unforgettable adventures.">
+    <meta name="keywords" content="travel agency, book tours, vacation packages, travel booking">
+    <title>Adventure Travels - Book Your Dream Trip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">Adventure Travels</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-    <span>Need help? Call us: +91 9510463433</span>
-    <span>Free Shipping on orders above ₹1999</span>
-</div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Explore the World with Us</h1>
+            <p>Discover breathtaking destinations and create memories that last a lifetime.</p>
+            <button class="cta-btn" onclick="openBookingModal()">Book Your Trip</button>
+            <div class="trust-badges">
+                <span>Affordable</span>
+                <span>Trusted</span>
+                <span>24/7 Support</span>
+            </div>
+        </div>
+    </section>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="search-box">
-        <input type="text" placeholder="Search">
+    <section id="tours" class="tours">
+        <h2>Popular Tour Packages</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="beach">Beach</button>
+            <button class="filter-btn" data-filter="mountain">Mountain</button>
+            <button class="filter-btn" data-filter="budget">Under $500</button>
+        </div>
+        <div class="tour-cards">
+            <div class="card" data-category="beach">
+                <img src="images/tour1.jpg" alt="Beach Paradise Tour" loading="lazy">
+                <h3>Bali Beach Escape</h3>
+                <p>Location: Bali, Indonesia</p>
+                <p>Duration: 7 Days</p>
+                <p class="price">$799</p>
+                <button class="book-btn" onclick="openBookingModal('Bali Beach Escape')">Book Now</button>
+            </div>
+            <div class="card" data-category="mountain">
+                <img src="images/tour2.jpg" alt="Mountain Adventure Tour" loading="lazy">
+                <h3>Swiss Alps Trek</h3>
+                <p>Location: Switzerland</p>
+                <p>Duration: 5 Days</p>
+                <p class="price">$999</p>
+                <button class="book-btn" onclick="openBookingModal('Swiss Alps Trek')">Book Now</button>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+    <section id="why-us" class="why-us">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Expert Experience</h3>
+                <p>Over 10 years of crafting unforgettable journeys.</p>
+            </div>
+            <div class="feature">
+                <h3>Safety First</h3>
+                <p>Guided tours with top-notch safety measures.</p>
+            </div>
+            <div class="feature">
+                <h3>Best Price Guarantee</h3>
+                <p>Competitive rates with no hidden fees.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Our Adventures</h2>
+        <div class="gallery-grid">
+            <img src="images/gallery1.jpg" alt="Travel Image 1" loading="lazy">
+            <img src="images/gallery2.jpg" alt="Travel Image 2" loading="lazy">
+            <!-- Add more images -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <a href="tel:+1234567890" class="contact-btn">Call Now</a>
+            <a href="https://wa.me/1234567890" class="contact-btn">WhatsApp</a>
+            <a href="mailto:info@adventuretravels.com" class="contact-btn">Email</a>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1b6c0e5b9b!2sMelbourne%20CBD%2C%20Victoria%2C%20Australia!5e0!3m2!1sen!2sus!4v1633072800000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Trip</h2>
+            <form id="booking-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone (WhatsApp enabled)" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <select id="destination" required>
+                    <option value="">Select Destination</option>
+                    <option value="Bali Beach Escape">Bali Beach Escape</option>
+                    <option value="Swiss Alps Trek">Swiss Alps Trek</option>
+                    <!-- Add more options -->
+                </select>
+                <input type="date" id="date" required>
+                <input type="number" id="travelers" placeholder="Number of Travelers" min="1" required>
+                <textarea id="message" placeholder="Special Requests"></textarea>
+                <button type="submit" class="confirm-btn">Confirm Booking</button>
+            </form>
+        </div>
     </div>
 
-    <div class="logo">
-        <img src="logo.jpeg" alt="Suvarna Silver Jewellers">
-    </div>
+    <footer>
+        <p>&copy; 2023 Adventure Travels. All rights reserved.</p>
+    </footer>
 
-    <div class="icons">
-        <span>👤</span>
-        <span class="cart">🛒 Cart (0)</span>
-    </div>
-</header>
-
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Best Sellers</a>
-    <a href="#">Rings</a>
-    <a href="#">Earrings</a>
-    <a href="#">Bracelets</a>
-    <a href="#">Necklace</a>
-    <a href="#">Anklet</a>
-    <a href="#">Watch</a>
-</nav>
-
-<!-- HERO SECTION
-<section class="hero">
-    <div class="hero-text">
-        <h2>925 Pure Silver</h2>
-        <h1>Jewellery</h1>
-        <button>Shop Now</button>
-    </div> -->
-</section>
-<!-- PRODUCTS SECTION -->
-<section class="products">
-    <h2>Featured Gold Jewellery</h2>
-
-    <div class="product-grid">
-
-        <div class="product-card">
-            <img src="pic1.jpeg" alt="Silver Ring">
-            <h3>Bridal Temple Necklace</h3>
-            <p class="price">₹24,499</p>
-            <button>Buy Now</button>
-        </div>
-
-        <div class="product-card">
-            <img src="pic3.jpeg" alt="Silver Earrings">
-            <h3>Handmade Necklace</h3>
-            <p class="price">₹19,999</p>
-            <button>Buy Now</button>
-        </div>
-
-        <div class="product-card">
-            <img src="pic2.jpeg" alt="Silver Bracelet">
-            <h3>Royal Temple Necklace</h3>
-            <p class="price">₹30,299</p>
-            <button>Buy Now</button>
-        </div>
-
-        <div class="product-card">
-            <img src="pic5.jpeg" alt="Designer Ring">
-            <h3>Designer Necklace</h3>
-            <p class="price">₹50,799</p>
-            <button>Buy Now</button>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Suvarna Silver Jewellers | All Rights Reserved</p>
-</footer>
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
